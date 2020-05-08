@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['SeqTools.py'],
-             pathex=['C:\\Users\\Duck\\Desktop\\Lab'],
+             pathex=[''],
              binaries=[],
              datas=[],
              hiddenimports=[],

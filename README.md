@@ -10,5 +10,4 @@ App works with nucleutide sequences, which are in clipboard.
 2. Press on button with action, that you like to perform.
 3. Clipboard content changes on needed one, so you can paste it anywhere you want.
 
-Works on Windows platform only. 
-Requires biopython and kivy packages.
+Requires biopython, clipboard and kivy packages.

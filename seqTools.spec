@@ -2,15 +2,17 @@
 
 block_cipher = None
 
+with open('exclude.txt') as file:
+    exc = file.read().split(',')[:-1]
 
-a = Analysis(['SeqTools.py'],
-             pathex=['C:\\Users\\Duck\\Desktop\\Lab'],
+a = Analysis(['seqTools.py'],
+             pathex=['.'],
              binaries=[],
              datas=[],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
-             excludes=[],
+             excludes=[*exc],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
              cipher=block_cipher,

@@ -3,29 +3,27 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.config import Config
 from kivy.uix.button import Button
-import win32clipboard as wclip
 import re
+import clipboard as clip
 
 Config.set('graphics', 'resizable', '0')
 Config.set('graphics', 'width', '400')
 Config.set('graphics', 'height', '100')
 
 def clipboard_content_manager(inst):
-	wclip.OpenClipboard()
-	seq = wclip.GetClipboardData()
-	seq = Seq(re.sub(r'[\d\s]*', '', seq))
-	wclip.EmptyClipboard()
-
-	if (inst.text=='Reverse'):
-		wclip.SetClipboardText(str(seq[::-1]))
-	elif (inst.text=='Complement'):
-		wclip.SetClipboardText(str(seq.complement()))
-	elif (inst.text=='Reversed\ncomplement'):
-		wclip.SetClipboardText(str(seq.reverse_complement()))
-	elif (inst.text=='Translate'):
-		wclip.SetClipboardText(str(seq.translate()))
-	wclip.CloseClipboard()
-
+    seq = clip.paste()
+    seq = Seq(re.sub(r'[\d\s]*', '', seq))
+    try:
+        if (inst.text=='Reverse'):
+            clip.copy(str(seq[::-1]))
+        elif (inst.text=='Complement'):
+            clip.copy(str(seq.complement()))
+        elif (inst.text=='Reversed\ncomplement'):
+            clip.copy(str(seq.reverse_complement()))
+        elif (inst.text=='Translate'):
+            clip.copy(str(seq.translate()))
+    except Exception as exc:
+        pass
 
 class SeqToolsApp(App):
 	def build(self):

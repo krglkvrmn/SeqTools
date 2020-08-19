@@ -23,7 +23,7 @@ def clipboard_content_manager(inst):
         elif (inst.text=='Translate'):
             clip.copy(str(seq.translate()))
     except Exception as exc:
-        pass
+        print(exc)
 
 class SeqToolsApp(App):
 	def build(self):

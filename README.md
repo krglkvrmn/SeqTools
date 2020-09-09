@@ -5,7 +5,8 @@ This includes **Reverse**, **Complement**, **Reversed complement** and **Transla
 ## Installation
 App was tested on python 3.7.9 and does not support 3.8.X+ versions.
 
-Clone repository to your local machine and install requirements with `pip install -r requirements.txt`.
+Clone repository to your local machine and install requirements with\
+`pip install -r requirements.txt`.
 
 ### Linux
 Install `xclip` package, which is needed to control clipboard.\
